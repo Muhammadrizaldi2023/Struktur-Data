@@ -1,0 +1,25 @@
+def rearrange_even_odd(arr):
+    # Mengatur ulang urutan bilangan bulat sehingga genap muncul sebelum ganjil
+
+    # Basis: jika array kosong atau hanya berisi satu elemen, tidak ada yang perlu diubah
+    if len(arr) <= 1:
+        return arr
+
+    # Array dibagi menjadi dua bagian: genap dan ganjil
+    even = []
+    odd = []
+    for num in arr:
+        if num % 2 == 0:
+            even.append(num)
+        else:
+            odd.append(num)
+
+    # Gabungkan kembali array genap dan ganjil
+    rearranged_arr = even + odd
+
+    return rearranged_arr
+
+# Contoh penggunaan
+arr = [1, 2, 3, 4, 6, 8, 5, 12, 10, 7,9]
+rearranged = rearrange_even_odd(arr)
+print("Hasil Bilangan Genap dan Ganjil:", rearranged)
