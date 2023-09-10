@@ -1,0 +1,24 @@
+def is_palindrome(s):
+    # Kasus dasar: jika panjang string kurang dari atau sama dengan 1, itu adalah palindrom
+    if len(s) <= 1:
+        return True
+    # Periksa apakah karakter pertama dan terakhir sama
+    if s[0] == s[-1]:
+        # Rekursi dengan string yang lebih pendek tanpa karakter pertama dan terakhir
+        return is_palindrome(s[1:-1])
+    else:
+        # Jika karakter pertama dan terakhir tidak sama, itu bukan palindrom
+        return False
+
+# Contoh penggunaan
+s1 = "rececar"
+s2 = "gohangosalamiimalasagnahog"
+if is_palindrome(s1):
+    print(s1, "adalah palindrom.")
+else:
+    print(s2, "bukan palindrom.")
+    
+if is_palindrome(s2):
+    print(s1, "adalah palindrom.")
+else:
+    print(s2, "bukan palindrom.")
